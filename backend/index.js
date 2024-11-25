@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const PORT = 5000;
+const PORT =  5000;
 const dbPath = path.join(__dirname, 'db.json');
 
 // Read database
@@ -40,6 +40,14 @@ app.patch('/users/:id/status', (req, res) => {
   } else {
     res.status(404).json({ message: 'User not found' });
   }
+});
+
+// Serve static files from React build
+app.use(express.static(path.join(__dirname, 'build')));
+
+// Handle React routing, return all requests to React app
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 app.listen(PORT, () => {
