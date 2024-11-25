@@ -1,5 +1,11 @@
 const express = require('express');
-const jsonServer = require('json-server');
+try {
+  const jsonServer = require('json-server');
+  console.log('json-server successfully loaded');
+} catch (err) {
+  console.log('Error loading json-server:', err.message);
+}
+
 const path = require('path');
 const PORT = process.env.PORT || 5000;
 
@@ -15,6 +21,7 @@ app.use('/api', router);
 
 // Serve frontend static files (for production)
 app.use(express.static(path.join(__dirname, 'build')));
+
 
 
 app.listen(PORT, () => {
