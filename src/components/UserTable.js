@@ -10,6 +10,7 @@ import {
 
 const UserTable = ({
   users,
+  setUsers,
   onEdit,
   onDelete,
   currentUser,
@@ -62,10 +63,27 @@ const UserTable = ({
   };
 
   // Handle user status toggle (active/inactive)
-  const handleStatusToggle = (userId, currentStatus) => {
-    onEdit(userId, { status: !currentStatus });
+  // const handleStatusToggle = (userId, currentStatus) => {
+  //   onEdit(userId, { status: !currentStatus });
+  // };
+  const handleStatusToggle = async (userId) => {
+    try {
+      const response = await fetch(`http://localhost:5000/users/${userId}/status`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      if (!response.ok) throw new Error('Failed to toggle user status');
+      
+      const updatedUser = await response.json();
+      setUsers(users.map(user => 
+        user.id === userId ? { ...user, status: updatedUser.status } : user
+      ));
+    } catch (error) {
+      console.error('Error toggling user status:', error);
+    }
   };
-
   return (
     <div className="w-full overflow-x-hidden px-4 sm:px-0 lg:px-8">
     <table className="min-w-full border border-gray-200 bg-white shadow-md rounded-lg text-sm sm:text-base">

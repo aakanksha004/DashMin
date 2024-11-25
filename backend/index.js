@@ -1,28 +1,46 @@
 const express = require('express');
-try {
-  const jsonServer = require('json-server');
-  console.log('json-server successfully loaded');
-} catch (err) {
-  console.log('Error loading json-server:', err.message);
-}
-
+const fs = require('fs');
 const path = require('path');
-const PORT = process.env.PORT || 5000;
+const cors = require('cors');
 
 const app = express();
-const router = jsonServer.router(path.join(__dirname, 'db.json'));
-const middlewares = jsonServer.defaults();
+app.use(cors());
+app.use(express.json());
 
-// Use default middlewares (CORS, static files, etc.)
-app.use(middlewares);
+const PORT = 5000;
+const dbPath = path.join(__dirname, 'db.json');
 
-// Serve your API from db.json
-app.use('/api', router);
+// Read database
+const readDatabase = () => {
+  const data = fs.readFileSync(dbPath, 'utf8');
+  return JSON.parse(data);
+};
 
-// Serve frontend static files (for production)
-app.use(express.static(path.join(__dirname, 'build')));
+// Write database
+const writeDatabase = (data) => {
+  fs.writeFileSync(dbPath, JSON.stringify(data, null, 2));
+};
 
+// Get users
+app.get('/users', (req, res) => {
+  const database = readDatabase();
+  res.json(database.users);
+});
 
+// Toggle user status
+app.patch('/users/:id/status', (req, res) => {
+  const database = readDatabase();
+  const userId = req.params.id;
+  const userIndex = database.users.findIndex(user => user.id === userId);
+
+  if (userIndex !== -1) {
+    database.users[userIndex].status = !database.users[userIndex].status;
+    writeDatabase(database);
+    res.json(database.users[userIndex]);
+  } else {
+    res.status(404).json({ message: 'User not found' });
+  }
+});
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

@@ -285,6 +285,7 @@ const UsersPage = () => {
 
     <UserTable
       users={currentUsers}
+      setUsers={setUsers}
       currentUser={currentUser}
       onEdit={handleEdit}
       onDelete={handleDelete}
