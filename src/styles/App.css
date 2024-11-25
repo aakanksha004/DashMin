@@ -1,0 +1,21 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.app {
+  display: flex;
+  flex-direction: column; /* Ensure header stays on top */
+  height: 100vh;
+}
+
+.main-content {
+  display: flex;
+  flex: 1; /* Take remaining space */
+  margin-top: 60px; /* Account for header height */
+}
+
+.page-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto; /* Enable scrolling for content */
+}

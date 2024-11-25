@@ -1,0 +1,49 @@
+.header {
+    position: fixed; /* Fix the header at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 10%; /* Set a fixed height */
+    background-color: #0e393c; /* Green background */
+    color: white; /* Text color */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Vertically center items */
+    justify-content: space-between; /* Space between elements */
+    padding: 0 20px; /* Horizontal padding */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    z-index: 1000; /* Ensure it appears above other elements */
+  }
+  
+  .header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .header .nav-links {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .header .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+  
+  .header .nav-links a:hover {
+    color: #d4edda; /* Light green on hover */
+  }
+  
+  /* Adjust for smaller screens */
+  @media (max-width: 768px) {
+    .header h1 {
+      font-size: 20px;
+    }
+  
+    .header .nav-links a {
+      font-size: 14px;
+    }
+  }
+  

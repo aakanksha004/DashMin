@@ -1,0 +1,164 @@
+/* General Styles for the Users Page */
+
+.users-page {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+     text-align: center; 
+     /* position: relative; */
+     margin-left: 250px;
+  }
+  .add-user-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 23px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .add-user-btn:hover {
+    background-color: #0056b3;
+  }
+  .save-btn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
+  .save-btn:hover {
+    background-color: #45a049;
+  }
+  .users-page h2 {
+    font-size: 32px; /* Larger font size */
+    font-weight: bold; /* Make it bold */
+    margin-bottom: 20px;
+    color: #0e393c; /* Text color */
+    text-align: center; /* Center the heading */
+    text-transform: uppercase; /* Optional: Make the text uppercase * /* Optional: Add some spacing between letters */
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Table Styles */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .data-table th,
+  .data-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .data-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  .data-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .data-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Button Styles */
+  button {
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 5px;
+    border: none;
+    border-radius: 3px; /* Adds rounded corners to buttons */
+  }
+  
+  button:hover {
+    opacity: 0.8; /* Button hover effect */
+  }
+  
+  /* Edit Button (Blue) */
+  button.edit {
+    background-color: #0d5a5c !important;  /* Blue background */
+    color: white;  /* White text */
+  }
+  
+  button.edit:hover {
+    background-color: #0f4b4f !important;  /* Darker blue when hovered */
+  }
+  
+  /* Delete Button (Red) */
+  button.delete {
+    background-color: #c23d4a !important;  /* Red background */
+    color: white;  /* White text */
+  }
+  
+  button.delete:hover {
+    background-color: #b92231 !important;  /* Darker red when hovered */
+  }
+  
+  
+
+
+  /* //pagination */
+
+  /* Pagination Container */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 10px;
+  }
+  
+  /* Pagination Button Styles */
+  .pagination button {
+    background-color: #058f99 !important;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Pagination Button Hover */
+  .pagination button:hover {
+    background-color: #406d70 !important;
+  }
+  
+  /* Active Page Button */
+  .pagination button.active {
+    background-color: #0e393c !important;
+    font-weight: bold;
+    color: white;
+    cursor: not-allowed;
+  }
+  
+  /* Disabled Button (Previous/Next on first/last page) */
+  .pagination button:disabled {
+    background-color: #c1bebe !important;
+    cursor: not-allowed;
+  }
+  
+  /* Page Number Styling */
+  .pagination button:not(.active) {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .pagination button:not(.active):hover {
+    background-color: #0056b3;
+  }
+  

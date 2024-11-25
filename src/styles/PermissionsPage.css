@@ -1,0 +1,80 @@
+.permissions-page {
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center; /* Center all child elements horizontally */
+    margin-left: 250px;  
+}
+  
+  .permissions-page h2 {
+    font-size: 32px; /* Larger font size */
+    font-weight: bold; /* Make it bold */
+    margin-bottom: 20px;
+    color: #0e393c; /* Text color */
+    text-align: center; /* Center the heading */
+    text-transform: uppercase; /* Optional: Make the text uppercase */
+    font-family: 'Poppins', sans-serif; /* Beautiful font */
+  }
+  
+  .permissions-page .add-button {
+    display: inline-block; /* Ensure the button is treated like an inline element */
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px auto; /* Add vertical spacing and auto margin for centering */
+  }
+  
+  .permissions-page .add-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Table styles remain unchanged */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .data-table th,
+  .data-table td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+  }
+  
+  .data-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  .data-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .data-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Edit button */
+  button.edit {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  button.edit:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Delete button */
+  button.delete {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  button.delete:hover {
+    background-color: #c82333;
+  }
+  
