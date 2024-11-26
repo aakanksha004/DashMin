@@ -3,13 +3,13 @@
     {
       "id": "1",
       "name": "John Doe",
-      "role": "User",
+      "role": "Admin",
       "permissions": [
         "Read",
         "Write",
         "delete"
       ],
-      "status": true
+      "status": false
     },
     {
       "id": "2",
@@ -298,6 +298,16 @@
         "delete"
       ],
       "status": true
+    },
+    {
+      "name": " tiwari",
+      "role": "Admin",
+      "permissions": [
+        "Read",
+        "Write"
+      ],
+      "status": true,
+      "id": "1732632173558"
     }
   ]
 }

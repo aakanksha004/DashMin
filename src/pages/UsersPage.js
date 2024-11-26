@@ -20,7 +20,8 @@ const UsersPage = () => {
     role: "",
     permissions: "",
   });
-
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [usersPerPage] = useState(10);
@@ -135,17 +136,20 @@ const UsersPage = () => {
 
   const handleAddUser = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setError('');
+  
     const newPermissions = newUser.permissions
       ? newUser.permissions.split(",").map((p) => p.trim())
       : [];
-
+  
     const newUserData = {
       name: newUser.name,
       role: newUser.role,
       permissions: newPermissions,
       status: true,
     };
-
+  
     try {
       const response = await fetch("http://localhost:5000/users", {
         method: "POST",
@@ -154,15 +158,24 @@ const UsersPage = () => {
         },
         body: JSON.stringify(newUserData),
       });
-
-      if (!response.ok) throw new Error("Failed to add user");
-
-      const addedUser = await response.json();
-      setUsers((prevUsers) => [...prevUsers, addedUser]);
+  
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+  
+      const data = await response.json();
+      
+      // Update the users list with the new user
+      setUsers(prevUsers => [...prevUsers, data]);
+      
+      // Clear form and close modal
       setModalOpen(false);
-      setNewUser({ name: "", role: "", permissions: "" });
-    } catch (error) {
-      console.error("Error adding user:", error);
+      setNewUser({ name: '', role: '', permissions: '' });
+      
+    } catch (err) {
+      setError(err.message || 'Failed to add user');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -323,56 +336,61 @@ const UsersPage = () => {
 </div>
 
 
-    {modalOpen && (
-      <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)}>
-        <h3 className="text-lg font-bold mb-4 text-teal-800">Add User</h3>
-        <form onSubmit={handleAddUser} className="flex flex-col gap-4">
-          <input
-            type="text"
-            name="name"
-            value={newUser.name}
-            onChange={handleInputChange}
-            placeholder="Name"
-            className="border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
-            required
-          />
-          <select
-            name="role"
-            value={newUser.role}
-            onChange={handleInputChange}
-            className="border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
-            required
-          >
-            <option value="">Select Role</option>
-            <option value="Admin">Admin</option>
-            <option value="User">User</option>
-            <option value="Editor">Editor</option>
-          </select>
-          <input
-            type="text"
-            name="permissions"
-            value={newUser.permissions}
-            onChange={handleInputChange}
-            placeholder="Permissions (comma separated)"
-            className="border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
-          />
-          <div className="flex gap-4">
-            <button
-              type="submit"
-              className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors"
-            >
-              Save
-            </button>
-            <button
-              type="button"
-              onClick={() => setModalOpen(false)}
-              className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 transition-colors"
-            >
-              Cancel
-            </button>
-          </div>
-        </form>
-      </Modal>
+{modalOpen && (
+  <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)}>
+    <h3 className="text-lg font-bold mb-4 text-teal-800">Add User</h3>
+    {error && <div className="text-red-500 mb-4">{error}</div>}
+    <form onSubmit={handleAddUser} className="flex flex-col gap-4">
+      <input
+        type="text"
+        name="name"
+        value={newUser.name}
+        onChange={handleInputChange}
+        placeholder="Name"
+        className="border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
+        required
+      />
+      <select
+        name="role"
+        value={newUser.role}
+        onChange={handleInputChange}
+        className="border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
+        required
+      >
+        <option value="">Select Role</option>
+        <option value="Admin">Admin</option>
+        <option value="User">User</option>
+        <option value="Editor">Editor</option>
+      </select>
+      <input
+        type="text"
+        name="permissions"
+        value={newUser.permissions}
+        onChange={handleInputChange}
+        placeholder="Permissions (comma separated)"
+        className="border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
+      />
+      <div className="flex gap-4">
+        <button
+          type="submit"
+          disabled={loading}
+          className={`bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors ${
+            loading ? 'opacity-50 cursor-not-allowed' : ''
+          }`}
+        >
+          {loading ? 'Saving...' : 'Save'}
+        </button>
+        <button
+          type="button"
+          onClick={() => setModalOpen(false)}
+          disabled={loading}
+          className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 transition-colors"
+        >
+          Cancel
+        </button>
+      </div>
+    </form>
+  </Modal>
     )}
   </div>
 </div>
