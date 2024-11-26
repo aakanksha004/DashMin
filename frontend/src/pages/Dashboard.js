@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext,useState, useEffect } from "react";
 import { Card, CardContent, Typography, Grid } from "@mui/material"; // MUI components
 import { Doughnut, Bar } from "react-chartjs-2"; // Chart.js components
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from "chart.js";
+import { UserContext } from "../context/UserContext";
 
 // Register Chart.js components
 ChartJS.register(ArcElement, Tooltip, Legend, BarElement, CategoryScale, LinearScale);
 
 const Dashboard = ({ isSidebarOpen }) => {
+  // const userData = useContext(UserContext);
   const [userCount, setUserCount] = useState(0); // State for total users
   const [activeUserCount, setActiveUserCount] = useState(0); // State for active users
   const [inactiveUserCount, setInactiveUserCount] = useState(0); // State for inactive users

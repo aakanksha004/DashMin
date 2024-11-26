@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import UserTable from "../components/UserTable";
 import Modal from "../components/Modal";
 import { Add, Search, Sort, Refresh } from "@mui/icons-material"; // Importing Refresh icon from MUI
 import { Menu, MenuItem } from "@mui/material"; // Importing Menu and MenuItem from MUI
 import "../styles/UsersPage.css";
+import { UserContext } from "../contexts/UserContext"; 
 
 const UsersPage = () => {
-  const [users, setUsers] = useState([]);
+  const { users, setUsers } = useContext(UserContext);
+
   const [currentUser] = useState({
     id: 1,
     name: "Admin User",
@@ -30,8 +32,10 @@ const UsersPage = () => {
   const [nameSortMenuAnchor, setNameSortMenuAnchor] = useState(null); // Anchor for name sort menu
 
   useEffect(() => {
-    fetchUsers();
-  }, []);
+    if (users.length === 0) {
+      fetchUsers();
+    }
+  }, [users]);
 
   const fetchUsers = async () => {
     try {
@@ -151,7 +155,7 @@ const UsersPage = () => {
     };
   
     try {
-      const response = await fetch("https://dashmin.onrender.com//users", {
+      const response = await fetch("https://dashmin.onrender.com/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

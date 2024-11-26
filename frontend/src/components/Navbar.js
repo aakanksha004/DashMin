@@ -3,8 +3,8 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useLocation } from 'react-router-dom'; // Import useLocation to get the current route
 
 const navigation = [
-  { name: 'Dashboard', href: '/dashboard', current: false },
-  { name: 'Calendar', href: '/calendar', current: false },
+  { name: 'Dashboard', href: '#', current: false },
+  { name: 'Calendar', href: '#', current: false },
   { name: 'Projects', href: '#', current: false },
   { name: 'Team', href: '#', current: false },
 ];
