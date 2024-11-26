@@ -65,7 +65,7 @@ const Sidebar = () => {
       <ul className="mt-4">
         <li className="mb-4">
           <NavLink
-            to="/dashboard"
+            to="/"
             className={({ isActive }) =>
               `flex items-center gap-4 p-3 hover:bg-teal-800 rounded ${
                 isActive ? "bg-teal-700" : ""
@@ -78,7 +78,7 @@ const Sidebar = () => {
         </li>
         <li className="mb-4">
           <NavLink
-            to="/"
+            to="/users"
             className={({ isActive }) =>
               `flex items-center gap-4 p-3 hover:bg-teal-800 rounded ${
                 isActive ? "bg-teal-700" : ""
