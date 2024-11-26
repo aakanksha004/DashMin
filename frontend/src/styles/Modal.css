@@ -1,0 +1,113 @@
+/* Modal Overlay Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Content Box Styling */
+.modal-content {
+  background: white !important;
+  padding: 20px !important;
+  border-radius: 8px !important;
+  width: 400px !important; /* Adjust the width as needed */
+  max-width: 100% !important; /* Ensure modal is responsive */
+  text-align: center !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important; /* Soft shadow for depth */
+  transition: transform 0.3s ease-out !important; /* Smooth animation for opening/closing */
+  overflow: hidden; /* Prevent content overflow */
+}
+
+/* Close Button Styling */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgb(148, 50, 50);
+  border: none;
+  border-radius: 0 8px!important;
+  height: 35px;
+  width: 40px;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f6e9e9;
+  cursor: pointer;
+}
+
+/* Input Fields Styling */
+.modal-content input,
+.modal-content select { /* Apply to both input and select */
+  width: 100%; /* Ensure full width */
+  padding: 10px !important;
+  margin: 10px 0 !important;
+  border: 2px solid #ddd !important; /* Light border color */
+  border-radius: 5px !important;
+  font-size: 16px !important;
+  background-color: #f9f9f9 !important; /* Light background */
+  transition: border-color 0.3s ease-in-out !important;
+  box-shadow: 0.3s ease-in-out !important; /* Transition effects */
+  box-sizing: border-box; /* Prevent overflow */
+}
+
+/* Focus Styling for Input and Select */
+.modal-content input:focus,
+.modal-content select:focus {
+  border-color: #007bff; /* Blue border on focus */
+  outline: none; /* Remove outline */
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3); /* Add a blue glow effect */
+}
+
+/* Button Styling */
+button {
+  padding: 8px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  margin-top: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Save Button (Blue) */
+button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3; /* Darker blue when hovered */
+}
+
+/* Cancel Button (Red) */
+button.cancel {
+  background-color: #dc3545;
+  color: white;
+  margin-left: 10px; /* Space between buttons */
+}
+
+button.cancel:hover {
+  background-color: #c82333; /* Darker red when hovered */
+}
+
+/* Additional Styles for Select to Remove Black Background */
+.modal-content select {
+  background-color: #f9f9f9 !important; /* Ensure the background color is consistent */
+  color: #7c7a7a !important; /* Set text color */
+  /* margin-left: 0px!important; */
+  -webkit-appearance: none; /* Remove default dropdown arrow */
+  -moz-appearance: none; /* Remove default dropdown arrow */
+  appearance: none; /* Remove default dropdown arrow */
+  padding: 10px 20px !important; /* Consistent padding */
+  border-radius: 5px !important; /* Ensure select box has rounded corners */
+  border: 2px solid #ddd !important; /* Match the border with the input fields */
+  font-size: 16px !important; /* Consistent font size */
+}

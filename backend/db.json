@@ -3,13 +3,13 @@
     {
       "id": "1",
       "name": "John Doe",
-      "role": "Admin",
+      "role": "User",
       "permissions": [
         "Read",
         "Write",
         "delete"
       ],
-      "status": false
+      "status": true
     },
     {
       "id": "2",

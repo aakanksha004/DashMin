@@ -1,0 +1,71 @@
+/* General Table Styling */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .data-table th,
+  .data-table td {
+    border: 1px solid #929191 !important;
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 16px;
+  }
+  
+  .data-table th {
+    background-color: #827a7d !important;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .data-table tr{
+    background-color: #c3c0c0;
+    color: rgb(2, 26, 46);
+  }
+  .data-table tr:nth-child(even) {
+    background-color: #e6dddd !important;
+  }
+  
+  .data-table tr:hover {
+    background-color: #cac6c6 !important;
+  }
+  
+  /* Input Field Styling */
+  .edit-input {
+    width: calc(100% - 16px) !important;
+    padding: 8px !important;
+    font-size: 14px !important;
+    border: 1px solid #ddd !important;
+    border-radius: 5px !important;
+    background-color: #f9f9f9 !important;
+    box-sizing: border-box !important;
+    outline: none !important;
+  }
+  
+  .edit-input:focus {
+    border-color: #007bff !important;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5) !important;
+  }
+  
+  /* Status Button */
+  .status-btn {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .status-btn.active {
+    background-color: #4caf50;
+  }
+  
+  .status-btn.inactive {
+    background-color: #dc3545;
+  }
+  
+  
