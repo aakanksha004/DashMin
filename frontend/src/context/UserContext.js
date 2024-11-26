@@ -2,7 +2,7 @@ import React, { createContext, useState } from 'react';
 
 export const UserContext = createContext();
 
-const UserProvider = ({ children }) => {
+export const UserProvider = ({ children }) => {
   const [users, setUsers] = useState([]);
 
   return (
@@ -12,4 +12,4 @@ const UserProvider = ({ children }) => {
   );
 };
 
-export default UserProvider;
+

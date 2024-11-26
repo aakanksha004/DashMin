@@ -4,7 +4,7 @@ import Sidebar from "./components/Sidebar";
 import UsersPage from "./pages/UsersPage";
 import RolesPage from "./pages/RolesPage";
 import PermissionsPage from "./pages/PermissionsPage";
-import { UserContext, UserProvider } from "./context/UserContext";
+import { UserProvider } from "../src/context/UserContext";
 import { RoleProvider } from "./context/RoleContext";
 import Dashboard from "./pages/Dashboard";
 import CalendarComponent from "./pages/CalendarComponent";
@@ -12,6 +12,7 @@ import Navbar from "./components/Navbar";
 import "./styles/App.css";
 
 const App = () => {
+  
   
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [marginLeft, setMarginLeft] = useState("16rem");
