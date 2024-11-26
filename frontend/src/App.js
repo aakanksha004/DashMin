@@ -4,7 +4,7 @@ import Sidebar from "./components/Sidebar";
 import UsersPage from "./pages/UsersPage";
 import RolesPage from "./pages/RolesPage";
 import PermissionsPage from "./pages/PermissionsPage";
-import { UserProvider } from "../src/context/UserContext";
+import { UserProvider } from "./context/UserContext";
 import { RoleProvider } from "./context/RoleContext";
 import Dashboard from "./pages/Dashboard";
 import CalendarComponent from "./pages/CalendarComponent";
@@ -60,7 +60,7 @@ const App = () => {
                 <Routes>
                   <Route path="/calendar" element={<CalendarComponent />} />
                   <Route
-                    path="/dashboard"
+                    path="/"
                     element={
                       <Dashboard
                         isSidebarOpen={isSidebarOpen}
@@ -70,7 +70,7 @@ const App = () => {
                       />
                     }
                   />
-                  <Route path="/" element={<UsersPage />} />
+                  <Route path="/users" element={<UsersPage />} />
                   <Route path="/roles" element={<RolesPage />} />
                   <Route path="/permissions" element={<PermissionsPage />} />
                 </Routes>
