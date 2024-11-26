@@ -2,7 +2,7 @@ import React, { useContext,useState, useEffect } from "react";
 import { Card, CardContent, Typography, Grid } from "@mui/material"; // MUI components
 import { Doughnut, Bar } from "react-chartjs-2"; // Chart.js components
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from "chart.js";
-import { UserContext } from "../context/UserContext";
+// import { UserContext } from "../context/UserContext";
 
 // Register Chart.js components
 ChartJS.register(ArcElement, Tooltip, Legend, BarElement, CategoryScale, LinearScale);

@@ -4,7 +4,7 @@ import Modal from "../components/Modal";
 import { Add, Search, Sort, Refresh } from "@mui/icons-material"; // Importing Refresh icon from MUI
 import { Menu, MenuItem } from "@mui/material"; // Importing Menu and MenuItem from MUI
 import "../styles/UsersPage.css";
-import { UserContext } from "../contexts/UserContext"; 
+import { UserContext } from "../context/UserContext"; 
 
 const UsersPage = () => {
   const { users, setUsers } = useContext(UserContext);
