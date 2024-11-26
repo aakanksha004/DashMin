@@ -35,7 +35,7 @@ const UsersPage = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await fetch("http://localhost:5000/users");
+      const response = await fetch("https://dashmin.onrender.com/users");
       if (!response.ok) throw new Error("Failed to fetch users");
       const data = await response.json();
       setUsers(data);
@@ -101,7 +101,7 @@ const UsersPage = () => {
 
   const handleEdit = async (userId, updatedData) => {
     try {
-      const response = await fetch(`http://localhost:5000/users/${userId}`, {
+      const response = await fetch(`https://dashmin.onrender.com${userId}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -122,7 +122,7 @@ const UsersPage = () => {
 
   const handleDelete = async (userId) => {
     try {
-      const response = await fetch(`http://localhost:5000/users/${userId}`, {
+      const response = await fetch(`https://dashmin.onrender.com/${userId}`, {
         method: "DELETE",
       });
 
@@ -151,7 +151,7 @@ const UsersPage = () => {
     };
   
     try {
-      const response = await fetch("http://localhost:5000/users", {
+      const response = await fetch("https://dashmin.onrender.com/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

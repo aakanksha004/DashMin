@@ -18,7 +18,7 @@ const Dashboard = ({ isSidebarOpen }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:5000/users"); // Adjust the API URL as needed
+        const response = await fetch("https://dashmin.onrender.com/users"); // Adjust the API URL as needed
         if (!response.ok) throw new Error("Failed to fetch users");
         const data = await response.json();
 
