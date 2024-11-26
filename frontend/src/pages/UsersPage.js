@@ -225,7 +225,7 @@ const UsersPage = () => {
       {/* Refresh Button */}
       <button
         onClick={handleRefresh}
-        className="flex items-center justify-center gap-2 ml-8 sm:ml-3 bg-teal-400 text-white px-2 py-2 rounded hover:bg-teal-600 transition-colors sm:px-4 sm:py-2"
+        className="flex items-center justify-center gap-2 ml-8  bg-teal-400 text-white px-2 py-2 rounded hover:bg-teal-600 transition-colors sm:px-4 sm:py-2"
       >
         <Refresh className="text-sm sm:text-base" />
         <span className="hidden sm:inline"></span>
