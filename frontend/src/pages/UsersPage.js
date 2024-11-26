@@ -225,7 +225,7 @@ const UsersPage = () => {
       {/* Refresh Button */}
       <button
         onClick={handleRefresh}
-        className="flex items-center justify-center gap-2 ml-8 bg-teal-400 text-white px-2 py-2 rounded hover:bg-teal-600 transition-colors sm:px-4 sm:py-2"
+        className="flex items-center justify-center gap-2 ml-8 sm:ml-4 bg-teal-400 text-white px-2 py-2 rounded hover:bg-teal-600 transition-colors sm:px-4 sm:py-2"
       >
         <Refresh className="text-sm sm:text-base" />
         <span className="hidden sm:inline"></span>
@@ -261,7 +261,7 @@ const UsersPage = () => {
         {/* Sort by Name Button */}
         <button
           onClick={(e) => setNameSortMenuAnchor(e.currentTarget)}
-          className="flex items-center justify-center bg-teal-600 text-white px-2 py-2 mr-8 rounded hover:bg-teal-500 transition-colors sm:px-4 sm:py-2"
+          className="flex items-center justify-center bg-teal-600 text-white px-2 py-2 mr-8 sm:mr-4 rounded hover:bg-teal-500 transition-colors sm:px-4 sm:py-2"
         >
           <Sort className="text-sm sm:text-base" />
           <span className="hidden sm:inline">Sort by Name</span>
