@@ -68,7 +68,7 @@ const UserTable = ({
   // };
   const handleStatusToggle = async (userId) => {
     try {
-      const response = await fetch(`https://dashmin-frontend.onrender.com/${userId}/status`, {
+      const response = await fetch(`https://dashmin.onrender.com//${userId}/status`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
