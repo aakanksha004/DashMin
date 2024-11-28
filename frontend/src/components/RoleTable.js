@@ -42,9 +42,9 @@ const RolesTable = ({ roles, onEdit, onDelete }) => {
     <table className="min-w-full w-full border-collapse border border-gray-200 bg-white shadow-md rounded-md text-sm sm:text-base">
       <thead>
         <tr className="bg-teal-700 text-white">
-          <th className="p-2 sm:p-3 text-left w-1/3">Role Name</th>
-          <th className="p-2 sm:p-3 text-left w-1/3">Permissions</th>
-          <th className="p-2 sm:p-3 text-center w-1/3">Actions</th>
+          <th className="p-2  max-[300px]:p-1 sm:p-3 text-left w-1/3">Role Name</th>
+          <th className="p-2 max-[300px]:p-1 sm:p-3 text-left w-1/3 max-[300px]:hidden ">Permissions</th>
+          <th className="p-2 max-[300px]:p-1  sm:p-3 text-center w-1/3">Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -66,7 +66,7 @@ const RolesTable = ({ roles, onEdit, onDelete }) => {
                 role.name
               )}
             </td>
-            <td className="p-2 sm:p-3">
+            <td className="p-2 sm:p-3 max-[300px]:hidden ">
               {editingRoleId === role.id ? (
                 <input
                   type="text"

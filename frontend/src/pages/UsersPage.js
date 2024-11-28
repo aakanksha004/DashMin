@@ -237,7 +237,7 @@ const UsersPage = () => {
           className="flex items-center justify-center bg-teal-600 text-white px-2 py-2 rounded hover:bg-teal-500 transition-colors sm:px-4 sm:py-2"
         >
           <Add className="text-sm sm:text-base" />
-          <span className="hidden sm:inline">Add User</span>
+          <span className="hidden lg:inline">Add User</span>
         </button>
 
         {/* Filter by Role Button */}
@@ -246,7 +246,7 @@ const UsersPage = () => {
           className="flex items-center justify-center bg-teal-600 text-white px-2 py-2 rounded hover:bg-teal-500 transition-colors sm:px-4 sm:py-2"
         >
           <Sort className="text-sm sm:text-base" />
-          <span className="hidden sm:inline">Filter by Role</span>
+          <span className="hidden lg:inline">Filter by Role</span>
         </button>
 
         {/* Filter by Status Button */}
@@ -255,7 +255,7 @@ const UsersPage = () => {
           className="flex  max-[px]:hidden  items-center justify-center bg-teal-600 text-white px-2 py-2 rounded hover:bg-teal-500 transition-colors sm:px-4 sm:py-2"
         >
           <Sort className="text-sm sm:text-base" />
-          <span className="hidden sm:inline">Filter by Status</span>
+          <span className="hidden lg:inline">Filter by Status</span>
         </button>
 
         {/* Sort by Name Button */}
@@ -264,7 +264,7 @@ const UsersPage = () => {
           className="flex max-[400px]:hidden items-center justify-center bg-teal-600 text-white px-2 py-2 mr-8  rounded hover:bg-teal-500 transition-colors sm:px-4 sm:py-2"
         >
           <Sort className="text-sm sm:text-base" />
-          <span className="hidden sm:inline">Sort by Name</span>
+          <span className="hidden lg:inline">Sort by Name</span>
         </button>
       </div>
     </div>
