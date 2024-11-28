@@ -89,7 +89,7 @@ const UserTable = ({
             <th className="p-2 sm:p-3 text-left w-3/12">Name</th>
             <th className="p-2 sm:p-3 text-left w-3/12">Role</th>
             <th className="p-2 sm:p-3 text-left w-3/12 hidden lg:table-cell">Permissions</th>
-            <th className="p-2 sm:p-3 text-center w-2/12 max-[400px]:hidden">Status</th>
+            <th className="p-2 sm:p-3 text-center w-2/12">Status</th>
             <th className="p-2 sm:p-3 text-center w-2/12">Actions</th>
           </tr>
         </thead>
@@ -146,7 +146,7 @@ const UserTable = ({
                 )}
               </td>
               {/* Status */}
-              <td className="p-2 sm:p-3 text-center max-[400px]:hidden">
+              <td className="p-2 sm:p-3 text-center ">
                 <button
                   onClick={() => handleStatusToggle(user.id)}
                   className={`px-2 py-1 sm:px-3 sm:py-1 text-xs sm:text-sm text-white rounded ${user.status ? "bg-teal-400" : "bg-red-400"} hover:opacity-70`}
