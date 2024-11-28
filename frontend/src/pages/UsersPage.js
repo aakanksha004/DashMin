@@ -101,6 +101,7 @@ const UsersPage = () => {
 
   const handleRefresh = () => {
     fetchUsers(); // Refresh the user list to its initial state
+    setSearchQuery("");
   };
 
   const handleEdit = async (userId, updatedData) => {
