@@ -252,7 +252,7 @@ const UsersPage = () => {
         {/* Filter by Status Button */}
         <button
           onClick={(e) => setStatusMenuAnchor(e.currentTarget)}
-          className="flex items-center justify-center bg-teal-600 text-white px-2 py-2 rounded hover:bg-teal-500 transition-colors sm:px-4 sm:py-2"
+          className="flex  max-[350px]:hidden  items-center justify-center bg-teal-600 text-white px-2 py-2 rounded hover:bg-teal-500 transition-colors sm:px-4 sm:py-2"
         >
           <Sort className="text-sm sm:text-base" />
           <span className="hidden sm:inline">Filter by Status</span>
@@ -261,7 +261,7 @@ const UsersPage = () => {
         {/* Sort by Name Button */}
         <button
           onClick={(e) => setNameSortMenuAnchor(e.currentTarget)}
-          className="flex items-center justify-center bg-teal-600 text-white px-2 py-2 mr-8  rounded hover:bg-teal-500 transition-colors sm:px-4 sm:py-2"
+          className="flex max-[400px]:hidden items-center justify-center bg-teal-600 text-white px-2 py-2 mr-8  rounded hover:bg-teal-500 transition-colors sm:px-4 sm:py-2"
         >
           <Sort className="text-sm sm:text-base" />
           <span className="hidden sm:inline">Sort by Name</span>
