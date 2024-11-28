@@ -81,7 +81,7 @@ const UserTable = ({
   };
 
   return (
-    <div className="w-full overflow-x-hidden px-4 sm:px-0 lg:px-8">
+    <div className="w-full overflow-x-hidden px-1 max-[400px]:px-0 sm:px-0 lg:px-8">
       <table className="min-w-full border border-gray-200 bg-white shadow-md rounded-lg text-sm sm:text-base">
         <thead className="bg-teal-700 text-white">
           <tr>

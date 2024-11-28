@@ -201,13 +201,13 @@ const UsersPage = () => {
 
   return (
     <div className="flex justify-center bg-gray-100 p-1 ">
-  <div className="max-w-4xl w-full bg-white shadow-md rounded-lg p-6">
+  <div className="max-w-4xl w-full bg-white shadow-md rounded-lg p-6 max-[400px]:px-0">
     <h2 className="text-2xl font-bold text-teal-700 text-center mb-6">
       User Management
     </h2>
 
     {/* Search Bar with Icon */}
-    <div className="flex items-center gap-4 mb-6 ml-8">
+    <div className="flex items-center gap-4 mb-6 ml-8 max-[400px]:ml-1 max-[400px]:mr-1">
       <div className="relative w-full">
         <input
           type="text"
@@ -225,7 +225,7 @@ const UsersPage = () => {
       {/* Refresh Button */}
       <button
         onClick={handleRefresh}
-        className="flex items-center justify-center gap-2 ml-8  bg-teal-400 text-white px-2 py-2 rounded hover:bg-teal-600 transition-colors sm:px-4 sm:py-2"
+        className="flex items-center justify-center gap-2 ml-8 max-[400px]:ml-1  bg-teal-400 text-white px-2 py-2 rounded hover:bg-teal-600 transition-colors sm:px-4 sm:py-2"
       >
         <Refresh className="text-sm sm:text-base" />
         <span className="hidden sm:inline"></span>
@@ -252,7 +252,7 @@ const UsersPage = () => {
         {/* Filter by Status Button */}
         <button
           onClick={(e) => setStatusMenuAnchor(e.currentTarget)}
-          className="flex  max-[350px]:hidden  items-center justify-center bg-teal-600 text-white px-2 py-2 rounded hover:bg-teal-500 transition-colors sm:px-4 sm:py-2"
+          className="flex  max-[px]:hidden  items-center justify-center bg-teal-600 text-white px-2 py-2 rounded hover:bg-teal-500 transition-colors sm:px-4 sm:py-2"
         >
           <Sort className="text-sm sm:text-base" />
           <span className="hidden sm:inline">Filter by Status</span>

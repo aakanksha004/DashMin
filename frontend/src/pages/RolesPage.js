@@ -67,7 +67,7 @@ const RolesPage = () => {
   return (
     <div className="flex justify-center bg-gray-100 p-2 h-full">
       {/* Main container with responsive design */}
-      <div className="max-w-4xl w-full bg-white shadow-md rounded-lg p-6">
+      <div className="max-w-4xl w-full bg-white shadow-md rounded-lg p-6 max-[400px]:px-0">
         <h2 className="text-2xl font-bold text-teal-700 text-center mb-6">
           Role Management
         </h2>

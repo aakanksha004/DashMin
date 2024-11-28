@@ -38,7 +38,7 @@ const RolesTable = ({ roles, onEdit, onDelete }) => {
   };
 
   return (
-    <div className="w-full overflow-x-hidden px-4 sm:px-6 lg:px-8">
+    <div className="w-full overflow-x-hidden px-1 max-[400px]:px-0 sm:px-6 lg:px-8">
     <table className="min-w-full w-full border-collapse border border-gray-200 bg-white shadow-md rounded-md text-sm sm:text-base">
       <thead>
         <tr className="bg-teal-700 text-white">
